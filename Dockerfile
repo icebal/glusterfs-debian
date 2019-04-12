@@ -4,7 +4,7 @@ ENV VERSION $SERIES.0
 ENV RELEASE 1
 ENV GPG_KEY
 COPY debian .
-RUN apt install gnupg dput dh-make devscripts lintian pbuilder debuilder debdelta && \
+RUN apt install gnupg dput dh-make devscripts lintian pbuilder debdelta && \
 	mkdir build packages glusterfs-$VERSION-$RELEASE && \
 	wget http://download.gluster.org/pub/gluster/glusterfs/${SERIES}/${VERSION}/glusterfs-${VERSION}.tar.gz && \
 	ln -s glusterfs-$VERSION.tar.gz glusterfs_$VERSION.orig.tar.gz && \
